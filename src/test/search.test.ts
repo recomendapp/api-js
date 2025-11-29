@@ -17,12 +17,13 @@ async function runTests() {
   // Test Movies Search
   try {
     console.log('\n🎬 Testing Movies Search...');
-    const movies = await client.search.movies({
+    const { data, error } = await client.search.movies({
       query: {
         q: 'Matrix',
       }
     });
-    console.log('✅ Movies Search successful:', movies);
+    if (error) throw error;
+    console.log('✅ Movies Search successful:', data);
   } catch (error) {
     console.error('❌ Movies Search failed:', error);
   }
@@ -30,12 +31,13 @@ async function runTests() {
   // Test TV Series Search
   try {
     console.log('\n📺 Testing TV Series Search...');
-    const tvSeries = await client.search.tvSeries({
+    const { data, error } = await client.search.tvSeries({
       query: {
         q: 'Game of Thrones',
       }
     });
-    console.log('✅ TV Series Search successful:', tvSeries);
+    if (error) throw error;
+    console.log('✅ TV Series Search successful:', data);
   } catch (error) {
     console.error('❌ TV Series Search failed:', error);
   }
@@ -43,12 +45,13 @@ async function runTests() {
   // Test Persons Search
   try {
     console.log('\n🧑 Testing Persons Search...');
-    const persons = await client.search.persons({
+    const { data, error } = await client.search.persons({
       query: {
         q: 'Tom Hanks',
       }
     });
-    console.log('✅ Persons Search successful:', persons);
+    if (error) throw error;
+    console.log('✅ Persons Search successful:', data);
   } catch (error) {
     console.error('❌ Persons Search failed:', error);
   }
@@ -56,12 +59,13 @@ async function runTests() {
   // Test Playlists Search
   try {
     console.log('\n🎵 Testing Playlists Search...');
-    const playlists = await client.search.playlists({
+    const { data, error } = await client.search.playlists({
       query: {
         q: 'Cat',
       }
     });
-    console.log('✅ Playlists Search successful:', playlists);
+    if (error) throw error;
+    console.log('✅ Playlists Search successful:', data);
   } catch (error) {
     console.error('❌ Playlists Search failed:', error);
   }
@@ -69,12 +73,13 @@ async function runTests() {
   // Test Users Search
   try {
     console.log('\n👤 Testing Users Search...');
-    const users = await client.search.users({
+    const { data, error } = await client.search.users({
       query: {
         q: 'loup',
       }
     });
-    console.log('✅ Users Search successful:', users);
+    if (error) throw error;
+    console.log('✅ Users Search successful:', data);
   } catch (error) {
     console.error('❌ Users Search failed:', error);
   }
@@ -82,12 +87,13 @@ async function runTests() {
   // Test Best Result Search
   try {
     console.log('\n🏆 Testing Best Result Search...');
-    const bestResult = await client.search.bestResult({
+    const { data, error } = await client.search.bestResult({
       query: {
         q: 'Inception',
       }
     });
-    console.log('✅ Best Result Search successful:', bestResult);
+    if (error) throw error;
+    console.log('✅ Best Result Search successful:', data);
   } catch (error) {
     console.error('❌ Best Result Search failed:', error);
   }
