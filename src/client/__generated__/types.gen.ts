@@ -4,7 +4,7 @@ export type ClientOptions = {
     baseUrl: string;
 };
 
-export type PersonDto = {
+export type Person = {
     /**
      * The person's unique identifier
      */
@@ -95,7 +95,7 @@ export type PersonDto = {
     };
 };
 
-export type GenreDto = {
+export type Genre = {
     /**
      * The genre's ID
      */
@@ -106,7 +106,7 @@ export type GenreDto = {
     name: string;
 };
 
-export type MovieDto = {
+export type Movie = {
     /**
      * The movie's unique identifier
      */
@@ -144,11 +144,11 @@ export type MovieDto = {
     /**
      * Directors of the movie
      */
-    directors: Array<PersonDto>;
+    directors: Array<Person>;
     /**
      * Genres of the movie
      */
-    genres: Array<GenreDto>;
+    genres: Array<Genre>;
     /**
      * Release date of the movie
      */
@@ -235,19 +235,19 @@ export type MovieDto = {
     };
 };
 
-export type PaginationMetaDto = {
+export type PaginationMeta = {
     total_results: number;
     total_pages: number;
     current_page: number;
     per_page: number;
 };
 
-export type SearchMoviesResponseDto = {
-    data: Array<MovieDto>;
-    pagination: PaginationMetaDto;
+export type SearchMoviesResponse = {
+    data: Array<Movie>;
+    pagination: PaginationMeta;
 };
 
-export type TvSeriesDto = {
+export type TvSeries = {
     /**
      * The TV series' unique identifier
      */
@@ -285,11 +285,11 @@ export type TvSeriesDto = {
     /**
      * Creators of the TV series
      */
-    created_by: Array<PersonDto>;
+    created_by: Array<Person>;
     /**
      * Genres of the TV series
      */
-    genres: Array<GenreDto>;
+    genres: Array<Genre>;
     /**
      * First air date of the TV series
      */
@@ -380,17 +380,17 @@ export type TvSeriesDto = {
     };
 };
 
-export type SearchTvSeriesResponseDto = {
-    data: Array<TvSeriesDto>;
-    pagination: PaginationMetaDto;
+export type SearchTvSeriesResponse = {
+    data: Array<TvSeries>;
+    pagination: PaginationMeta;
 };
 
-export type SearchPersonsResponseDto = {
-    data: Array<PersonDto>;
-    pagination: PaginationMetaDto;
+export type SearchPersonsResponse = {
+    data: Array<Person>;
+    pagination: PaginationMeta;
 };
 
-export type ProfileDto = {
+export type Profile = {
     /**
      * The user's unique identifier
      */
@@ -459,7 +459,7 @@ export type ProfileDto = {
     created_at: string;
 };
 
-export type PlaylistDto = {
+export type Playlist = {
     /**
      * The unique identifier of the playlist
      */
@@ -517,17 +517,17 @@ export type PlaylistDto = {
     /**
      * The user object
      */
-    user: ProfileDto;
+    user: Profile;
 };
 
-export type SearchPlaylistsResponseDto = {
-    data: Array<PlaylistDto>;
-    pagination: PaginationMetaDto;
+export type SearchPlaylistsResponse = {
+    data: Array<Playlist>;
+    pagination: PaginationMeta;
 };
 
-export type SearchUsersResponseDto = {
-    data: Array<ProfileDto>;
-    pagination: PaginationMetaDto;
+export type SearchUsersResponse = {
+    data: Array<Profile>;
+    pagination: PaginationMeta;
 };
 
 export type BestResultItem = {
@@ -538,10 +538,10 @@ export type BestResultItem = {
     /**
      * The data for the best result item. The actual schema depends on the `type` field.
      */
-    data: MovieDto | TvSeriesDto | PersonDto | ProfileDto | PlaylistDto;
+    data: Movie | TvSeries | Person | Profile | Playlist;
 };
 
-export type BestResultSearchResponseDto = {
+export type SearchBestResultResponse = {
     /**
      * The single best result found across all types, based on a hybrid score of text match and popularity.
      */
@@ -549,23 +549,23 @@ export type BestResultSearchResponseDto = {
     /**
      * Paginated movie search results
      */
-    movies: SearchMoviesResponseDto;
+    movies: SearchMoviesResponse;
     /**
      * Paginated TV series search results
      */
-    tv_series: SearchTvSeriesResponseDto;
+    tv_series: SearchTvSeriesResponse;
     /**
      * Paginated person search results
      */
-    persons: SearchPersonsResponseDto;
+    persons: SearchPersonsResponse;
     /**
      * Paginated user search results
      */
-    users: SearchUsersResponseDto;
+    users: SearchUsersResponse;
     /**
      * Paginated playlist search results
      */
-    playlists: SearchPlaylistsResponseDto;
+    playlists: SearchPlaylistsResponse;
 };
 
 export type HealthControllerGetHelloData = {
@@ -663,7 +663,7 @@ export type MoviesSearchControllerSearchV1Responses = {
     /**
      * Movies found successfully
      */
-    200: SearchMoviesResponseDto;
+    200: SearchMoviesResponse;
 };
 
 export type MoviesSearchControllerSearchV1Response = MoviesSearchControllerSearchV1Responses[keyof MoviesSearchControllerSearchV1Responses];
@@ -745,7 +745,7 @@ export type TvSeriesSearchControllerSearchV1Responses = {
     /**
      * TV series found successfully
      */
-    200: SearchTvSeriesResponseDto;
+    200: SearchTvSeriesResponse;
 };
 
 export type TvSeriesSearchControllerSearchV1Response = TvSeriesSearchControllerSearchV1Responses[keyof TvSeriesSearchControllerSearchV1Responses];
@@ -791,7 +791,7 @@ export type PersonsSearchControllerSearchV1Responses = {
     /**
      * Persons found successfully
      */
-    200: SearchPersonsResponseDto;
+    200: SearchPersonsResponse;
 };
 
 export type PersonsSearchControllerSearchV1Response = PersonsSearchControllerSearchV1Responses[keyof PersonsSearchControllerSearchV1Responses];
@@ -837,7 +837,7 @@ export type PlaylistsSearchControllerSearchV1Responses = {
     /**
      * Playlists found successfully
      */
-    200: SearchPlaylistsResponseDto;
+    200: SearchPlaylistsResponse;
 };
 
 export type PlaylistsSearchControllerSearchV1Response = PlaylistsSearchControllerSearchV1Responses[keyof PlaylistsSearchControllerSearchV1Responses];
@@ -883,7 +883,7 @@ export type UsersSearchControllerSearchV1Responses = {
     /**
      * Users found successfully
      */
-    200: SearchUsersResponseDto;
+    200: SearchUsersResponse;
 };
 
 export type UsersSearchControllerSearchV1Response = UsersSearchControllerSearchV1Responses[keyof UsersSearchControllerSearchV1Responses];
@@ -922,7 +922,7 @@ export type BestResultSearchControllerSearchV1Responses = {
     /**
      * Best results found successfully
      */
-    200: BestResultSearchResponseDto;
+    200: SearchBestResultResponse;
 };
 
 export type BestResultSearchControllerSearchV1Response = BestResultSearchControllerSearchV1Responses[keyof BestResultSearchControllerSearchV1Responses];
