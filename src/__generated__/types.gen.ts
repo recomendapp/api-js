@@ -12,87 +12,59 @@ export type Person = {
     /**
      * The person's name
      */
-    name?: {
-        [key: string]: unknown;
-    };
+    name: string | null;
     /**
      * The person's profile image path
      */
-    profile_path?: {
-        [key: string]: unknown;
-    };
+    profile_path: string | null;
     /**
      * The person's profile image URL
      */
-    profile_url?: {
-        [key: string]: unknown;
-    };
+    profile_url: string | null;
     /**
      * The person's birthday
      */
-    birthday?: {
-        [key: string]: unknown;
-    };
+    birthday: string | null;
     /**
      * The person's deathday
      */
-    deathday?: {
-        [key: string]: unknown;
-    };
+    deathday: string | null;
     /**
      * The person's homepage URL
      */
-    homepage?: {
-        [key: string]: unknown;
-    };
+    homepage: string | null;
     /**
      * The person's imdb identifier
      */
-    imdb_id?: {
-        [key: string]: unknown;
-    };
+    imdb_id: string | null;
     /**
      * The person's kown for department
      */
-    known_for_department?: {
-        [key: string]: unknown;
-    };
+    known_for_department: string | null;
     /**
      * The person's place of birth
      */
-    place_of_birth?: {
-        [key: string]: unknown;
-    };
+    place_of_birth: string | null;
     /**
      * The person's gender: 0 = Not specified, 1 = Female, 2 = Male, 3 = Non-binary
      */
-    gender?: {
-        [key: string]: unknown;
-    };
+    gender: number | null;
     /**
      * The person's biography
      */
-    biography?: {
-        [key: string]: unknown;
-    };
+    biography: string | null;
     /**
      * The person's popularity score
      */
-    popularity?: {
-        [key: string]: unknown;
-    };
+    popularity: number | null;
     /**
      * The person's slug
      */
-    slug?: {
-        [key: string]: unknown;
-    };
+    slug: string | null;
     /**
      * The person's URL
      */
-    url?: {
-        [key: string]: unknown;
-    };
+    url: string | null;
 };
 
 export type Genre = {
@@ -114,33 +86,23 @@ export type Movie = {
     /**
      * The title of the movie
      */
-    title: {
-        [key: string]: unknown;
-    };
+    title: string | null;
     /**
      * Poster path of the movie
      */
-    poster_path?: {
-        [key: string]: unknown;
-    };
+    poster_path: string | null;
     /**
      * Poster URL of the movie
      */
-    poster_url?: {
-        [key: string]: unknown;
-    };
+    poster_url: string | null;
     /**
      * Backdrop path of the movie
      */
-    backdrop_path: {
-        [key: string]: unknown;
-    };
+    backdrop_path: string | null;
     /**
      * Backdrop URL of the movie
      */
-    backdrop_url?: {
-        [key: string]: unknown;
-    };
+    backdrop_url: string | null;
     /**
      * Directors of the movie
      */
@@ -152,57 +114,39 @@ export type Movie = {
     /**
      * Release date of the movie
      */
-    release_date: {
-        [key: string]: unknown;
-    };
+    release_date: string | null;
     /**
      * Overview of the movie
      */
-    overview: {
-        [key: string]: unknown;
-    };
+    overview: string | null;
     /**
      * Budget of the movie in USD
      */
-    budget: {
-        [key: string]: unknown;
-    };
+    budget: number | null;
     /**
      * Homepage URL of the movie
      */
-    homepage: {
-        [key: string]: unknown;
-    };
+    homepage: string | null;
     /**
      * Revenue of the movie in USD
      */
-    revenue: {
-        [key: string]: unknown;
-    };
+    revenue: number | null;
     /**
      * Runtime of the movie in minutes
      */
-    runtime: {
-        [key: string]: unknown;
-    };
+    runtime: number | null;
     /**
      * Original language of the movie
      */
-    original_language: {
-        [key: string]: unknown;
-    };
+    original_language: string | null;
     /**
      * Original title of the movie
      */
-    original_title: {
-        [key: string]: unknown;
-    };
+    original_title: string | null;
     /**
      * Status of the movie
      */
-    status: {
-        [key: string]: unknown;
-    };
+    status: string | null;
     /**
      * Popularity score of the movie
      */
@@ -218,21 +162,15 @@ export type Movie = {
     /**
      * Slug of the movie
      */
-    slug?: {
-        [key: string]: unknown;
-    };
+    slug: string | null;
     /**
      * URL to the movie page
      */
-    url?: {
-        [key: string]: unknown;
-    };
+    url: string | null;
     /**
      * Followers average rating of the movie
      */
-    follower_avg_rating?: {
-        [key: string]: unknown;
-    };
+    follower_avg_rating: number | null;
 };
 
 export type PaginationMeta = {
@@ -255,33 +193,23 @@ export type TvSeries = {
     /**
      * The name of the TV series
      */
-    name: {
-        [key: string]: unknown;
-    };
+    name: string | null;
     /**
      * Poster path of the TV series
      */
-    poster_path?: {
-        [key: string]: unknown;
-    };
+    poster_path: string | null;
     /**
      * Poster URL of the TV series
      */
-    poster_url?: {
-        [key: string]: unknown;
-    };
+    poster_url: string | null;
     /**
      * Backdrop path of the TV series
      */
-    backdrop_path: {
-        [key: string]: unknown;
-    };
+    backdrop_path: string | null;
     /**
      * Backdrop URL of the TV series
      */
-    backdrop_url?: {
-        [key: string]: unknown;
-    };
+    backdrop_url: string | null;
     /**
      * Creators of the TV series
      */
@@ -293,33 +221,23 @@ export type TvSeries = {
     /**
      * First air date of the TV series
      */
-    first_air_date: {
-        [key: string]: unknown;
-    };
+    first_air_date: string | null;
     /**
      * Last air date of the TV series
      */
-    last_air_date: {
-        [key: string]: unknown;
-    };
+    last_air_date: string | null;
     /**
      * Overview of the TV series
      */
-    overview: {
-        [key: string]: unknown;
-    };
+    overview: string | null;
     /**
      * Number of seasons in the TV series
      */
-    number_of_seasons: {
-        [key: string]: unknown;
-    };
+    number_of_seasons: number | null;
     /**
      * Number of episodes in the TV series
      */
-    number_of_episodes: {
-        [key: string]: unknown;
-    };
+    number_of_episodes: number | null;
     /**
      * Is it in production?
      */
@@ -327,27 +245,19 @@ export type TvSeries = {
     /**
      * Original language of the TV series
      */
-    original_language: {
-        [key: string]: unknown;
-    };
+    original_language: string | null;
     /**
      * Original name of the TV series
      */
-    original_name: {
-        [key: string]: unknown;
-    };
+    original_name: string | null;
     /**
      * Status of the TV series
      */
-    status: {
-        [key: string]: unknown;
-    };
+    status: string | null;
     /**
      * Type of the TV series
      */
-    type: {
-        [key: string]: unknown;
-    };
+    type: string | null;
     /**
      * Popularity score of the TV series
      */
@@ -363,21 +273,15 @@ export type TvSeries = {
     /**
      * Slug of the TV series
      */
-    slug?: {
-        [key: string]: unknown;
-    };
+    slug: string | null;
     /**
      * URL to the TV series page
      */
-    url?: {
-        [key: string]: unknown;
-    };
+    url: string | null;
     /**
      * Followers average rating of the TV series
      */
-    follower_avg_rating?: {
-        [key: string]: unknown;
-    };
+    follower_avg_rating: number | null;
 };
 
 export type SearchTvSeriesResponse = {
@@ -406,27 +310,19 @@ export type Profile = {
     /**
      * The user's biography
      */
-    bio?: {
-        [key: string]: unknown;
-    };
+    bio: string | null;
     /**
      * URL to the user's avatar
      */
-    avatar_url?: {
-        [key: string]: unknown;
-    };
+    avatar_url: string | null;
     /**
      * URL to the user's website
      */
-    website?: {
-        [key: string]: unknown;
-    };
+    website: string | null;
     /**
      * The user's favorite color
      */
-    favorite_color?: {
-        [key: string]: unknown;
-    };
+    favorite_color: string | null;
     /**
      * The number of followers
      */
@@ -438,9 +334,7 @@ export type Profile = {
     /**
      * URL to the user's background image
      */
-    background_url?: {
-        [key: string]: unknown;
-    };
+    background_url: string | null;
     /**
      * Indicates if the user has a premium account
      */
@@ -471,9 +365,7 @@ export type Playlist = {
     /**
      * The timestamp of when the playlist was last updated
      */
-    updated_at?: {
-        [key: string]: unknown;
-    };
+    updated_at: string | null;
     /**
      * The ID of the user who owns the playlist
      */
@@ -485,15 +377,11 @@ export type Playlist = {
     /**
      * The description of the playlist
      */
-    description?: {
-        [key: string]: unknown;
-    };
+    description: string | null;
     /**
      * URL to the playlist poster image
      */
-    poster_url?: {
-        [key: string]: unknown;
-    };
+    poster_url: string | null;
     /**
      * Indicates if the playlist is private
      */

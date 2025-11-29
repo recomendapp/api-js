@@ -1,4 +1,4 @@
-import { createClient } from '../client';
+import { createClient } from '../src';
 
 const TEST_CONFIG = {
   baseUrl: 'http://127.0.0.1:3000',

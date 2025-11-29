@@ -2,6 +2,6 @@ import { defineConfig } from '@hey-api/openapi-ts';
 
 export default defineConfig({
   input: 'https://api.recomend.app/api-docs-json',
-  output: 'src/client/__generated__',
+  output: 'src/__generated__',
   client: '@hey-api/client-fetch',
 });
