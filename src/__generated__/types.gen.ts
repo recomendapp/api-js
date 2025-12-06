@@ -456,14 +456,89 @@ export type SearchBestResultResponse = {
     playlists: SearchPlaylistsResponse;
 };
 
+export type CreateReviewDto = {
+    /**
+     * The title of the review
+     */
+    title?: string | null;
+    /**
+     * The body of the review, in HTML format
+     */
+    body: string;
+};
+
+export type ReviewMovieDto = {
+    /**
+     * The unique identifier for the movie review (same as user_activity_movie_id).
+     */
+    id: number;
+    /**
+     * Timestamp when the review was created.
+     */
+    created_at: string;
+    /**
+     * Timestamp when the review was last updated.
+     */
+    updated_at: string;
+    /**
+     * Optional title of the review (max 50 characters).
+     */
+    title: string | null;
+    /**
+     * Number of times the review has been viewed.
+     */
+    views_count: number;
+    /**
+     * Number of likes the review has received.
+     */
+    likes_count: number;
+    /**
+     * Number of comments on the review.
+     */
+    comments_count: number;
+    /**
+     * The main body of the review (can contain HTML).
+     */
+    body: string;
+};
+
+export type ReviewTvSeriesDto = {
+    /**
+     * The unique identifier for the TV series review (same as user_activity_tv_series_id).
+     */
+    id: number;
+    /**
+     * Timestamp when the review was created.
+     */
+    created_at: string;
+    /**
+     * Timestamp when the review was last updated.
+     */
+    updated_at: string;
+    /**
+     * Optional title of the review (max 50 characters).
+     */
+    title: string | null;
+    /**
+     * Number of times the review has been viewed.
+     */
+    views_count: number;
+    /**
+     * Number of likes the review has received.
+     */
+    likes_count: number;
+    /**
+     * Number of comments on the review.
+     */
+    comments_count: number;
+    /**
+     * The main body of the review (can contain HTML).
+     */
+    body: string;
+};
+
 export type HealthControllerGetHelloData = {
     body?: never;
-    headers?: {
-        /**
-         * The language for the response. Defaults to "en-US".
-         */
-        language?: string;
-    };
     path?: never;
     query?: never;
     url: '/';
@@ -475,12 +550,6 @@ export type HealthControllerGetHelloResponses = {
 
 export type HealthControllerGetHealthData = {
     body?: never;
-    headers?: {
-        /**
-         * The language for the response. Defaults to "en-US".
-         */
-        language?: string;
-    };
     path?: never;
     query?: never;
     url: '/health';
@@ -686,12 +755,6 @@ export type PersonsSearchControllerSearchV1Response = PersonsSearchControllerSea
 
 export type PlaylistsSearchControllerSearchV1Data = {
     body?: never;
-    headers?: {
-        /**
-         * The language for the response. Defaults to "en-US".
-         */
-        language?: string;
-    };
     path?: never;
     query: {
         /**
@@ -732,12 +795,6 @@ export type PlaylistsSearchControllerSearchV1Response = PlaylistsSearchControlle
 
 export type UsersSearchControllerSearchV1Data = {
     body?: never;
-    headers?: {
-        /**
-         * The language for the response. Defaults to "en-US".
-         */
-        language?: string;
-    };
     path?: never;
     query: {
         /**
@@ -814,3 +871,53 @@ export type BestResultSearchControllerSearchV1Responses = {
 };
 
 export type BestResultSearchControllerSearchV1Response = BestResultSearchControllerSearchV1Responses[keyof BestResultSearchControllerSearchV1Responses];
+
+export type MovieReviewsControllerUpsertMovieReviewV1Data = {
+    body: CreateReviewDto;
+    path: {
+        movieId: number;
+    };
+    query?: never;
+    url: '/v1/movie/{movieId}/review';
+};
+
+export type MovieReviewsControllerUpsertMovieReviewV1Errors = {
+    /**
+     * Unauthorized
+     */
+    401: unknown;
+};
+
+export type MovieReviewsControllerUpsertMovieReviewV1Responses = {
+    /**
+     * Review created or updated successfully
+     */
+    200: ReviewMovieDto;
+};
+
+export type MovieReviewsControllerUpsertMovieReviewV1Response = MovieReviewsControllerUpsertMovieReviewV1Responses[keyof MovieReviewsControllerUpsertMovieReviewV1Responses];
+
+export type TvSeriesReviewsControllerUpsertTvSeriesReviewV1Data = {
+    body: CreateReviewDto;
+    path: {
+        tvSeriesId: number;
+    };
+    query?: never;
+    url: '/v1/tv/{tvSeriesId}/review';
+};
+
+export type TvSeriesReviewsControllerUpsertTvSeriesReviewV1Errors = {
+    /**
+     * Unauthorized
+     */
+    401: unknown;
+};
+
+export type TvSeriesReviewsControllerUpsertTvSeriesReviewV1Responses = {
+    /**
+     * Review created or updated successfully
+     */
+    200: ReviewTvSeriesDto;
+};
+
+export type TvSeriesReviewsControllerUpsertTvSeriesReviewV1Response = TvSeriesReviewsControllerUpsertTvSeriesReviewV1Responses[keyof TvSeriesReviewsControllerUpsertTvSeriesReviewV1Responses];

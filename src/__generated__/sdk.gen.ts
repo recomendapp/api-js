@@ -2,7 +2,7 @@
 
 import type { Client, Options as Options2, TDataShape } from './client';
 import { client } from './client.gen';
-import type { BestResultSearchControllerSearchV1Data, BestResultSearchControllerSearchV1Responses, HealthControllerGetHealthData, HealthControllerGetHealthResponses, HealthControllerGetHelloData, HealthControllerGetHelloResponses, MoviesSearchControllerSearchV1Data, MoviesSearchControllerSearchV1Errors, MoviesSearchControllerSearchV1Responses, PersonsSearchControllerSearchV1Data, PersonsSearchControllerSearchV1Errors, PersonsSearchControllerSearchV1Responses, PlaylistsSearchControllerSearchV1Data, PlaylistsSearchControllerSearchV1Errors, PlaylistsSearchControllerSearchV1Responses, TvSeriesSearchControllerSearchV1Data, TvSeriesSearchControllerSearchV1Errors, TvSeriesSearchControllerSearchV1Responses, UsersSearchControllerSearchV1Data, UsersSearchControllerSearchV1Errors, UsersSearchControllerSearchV1Responses } from './types.gen';
+import type { BestResultSearchControllerSearchV1Data, BestResultSearchControllerSearchV1Responses, HealthControllerGetHealthData, HealthControllerGetHealthResponses, HealthControllerGetHelloData, HealthControllerGetHelloResponses, MovieReviewsControllerUpsertMovieReviewV1Data, MovieReviewsControllerUpsertMovieReviewV1Errors, MovieReviewsControllerUpsertMovieReviewV1Responses, MoviesSearchControllerSearchV1Data, MoviesSearchControllerSearchV1Errors, MoviesSearchControllerSearchV1Responses, PersonsSearchControllerSearchV1Data, PersonsSearchControllerSearchV1Errors, PersonsSearchControllerSearchV1Responses, PlaylistsSearchControllerSearchV1Data, PlaylistsSearchControllerSearchV1Errors, PlaylistsSearchControllerSearchV1Responses, TvSeriesReviewsControllerUpsertTvSeriesReviewV1Data, TvSeriesReviewsControllerUpsertTvSeriesReviewV1Errors, TvSeriesReviewsControllerUpsertTvSeriesReviewV1Responses, TvSeriesSearchControllerSearchV1Data, TvSeriesSearchControllerSearchV1Errors, TvSeriesSearchControllerSearchV1Responses, UsersSearchControllerSearchV1Data, UsersSearchControllerSearchV1Errors, UsersSearchControllerSearchV1Responses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean> = Options2<TData, ThrowOnError> & {
     /**
@@ -74,4 +74,30 @@ export const bestResultSearchControllerSearchV1 = <ThrowOnError extends boolean 
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/v1/search/best-result',
     ...options
+});
+
+/**
+ * Create or update a movie review
+ */
+export const movieReviewsControllerUpsertMovieReviewV1 = <ThrowOnError extends boolean = false>(options: Options<MovieReviewsControllerUpsertMovieReviewV1Data, ThrowOnError>) => (options.client ?? client).put<MovieReviewsControllerUpsertMovieReviewV1Responses, MovieReviewsControllerUpsertMovieReviewV1Errors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/v1/movie/{movieId}/review',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Create or update a TV series review
+ */
+export const tvSeriesReviewsControllerUpsertTvSeriesReviewV1 = <ThrowOnError extends boolean = false>(options: Options<TvSeriesReviewsControllerUpsertTvSeriesReviewV1Data, ThrowOnError>) => (options.client ?? client).put<TvSeriesReviewsControllerUpsertTvSeriesReviewV1Responses, TvSeriesReviewsControllerUpsertTvSeriesReviewV1Errors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/v1/tv/{tvSeriesId}/review',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
 });
