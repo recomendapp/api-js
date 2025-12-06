@@ -1,6 +1,6 @@
 {
   "name": "@recomendapp/api-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Type-safe client for Recomend API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
