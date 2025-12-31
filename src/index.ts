@@ -70,6 +70,8 @@ export function createClient(config?: {
   };
 }
 
+export type ApiClient = ReturnType<typeof createClient>;
+
 export * from './__generated__/types.gen';
 
 export default createClient;
